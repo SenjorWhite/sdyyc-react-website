@@ -6,14 +6,24 @@ class NavBar extends Component {
         return (
             <div className="NavBar">
                 <ul className="nav-ul">
-                    <li className="nav-li" style={{ float: "left" }}>
-                        <button className="nav-button" onClick={this.props.openSideBar}>
-                            Home
-                        </button>
+                    <li>
+                        <button>Home</button>
                     </li>
-                    <li className="nav-li" style={{ float: "left" }}><a href="/" className="title"> Software Developers in YYC</a></li>
-                    <li className="nav-li" >
-                        <button className="nav-button">
+                    <li>
+                        <button>Tutorial</button>
+                    </li>
+                    <li>
+                        <button>Events</button>
+                    </li>
+                    <li>
+                        <button>Join us</button>
+                    </li>
+                    <li>
+                        <button>Contact</button>
+                    </li>
+                    <li className="title"><span>Software Developers in YYC</span></li>
+                    <li className="right" >
+                        <button className="user-button">
                             <i className="material-icons" >person</i>
                         </button>
                     </li>

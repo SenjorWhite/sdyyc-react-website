@@ -1,36 +1,37 @@
 .nav-ul {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    max-block-size: 50px;
-    overflow: hidden;
     background-color: #2f1557;
 }
 
 .title {
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
     border: none;
     background-color: #2f1557;
     padding: 14px 16px;
     color: white;
-    font-size: 16px;
+    font-size: 22px;
     text-align: center;
     text-decoration: none;
 }
 
-.nav-li {
-    float: right;
+.right {
+    margin-left: auto;
 }
 
-.nav-li {
-    display: block;
+.nav-ul li {
+    display: flex;
 }
 
-.nav-button {
-    display: block;
+.nav-ul button {
     border: none;
+    padding: 12px;
+    margin: 1px;
     background-color: #2f1557;
-    padding: 16px 16px;
     color: white;
     font-size: 16px;
     text-align: center;
@@ -38,10 +39,14 @@
     cursor: pointer;
 }
 
-.nav-button:focus {
+.nav-ul button:focus {
     outline-color: #2f1557;
 }
 
-.nav-button:hover {
+.nav-ul button:hover {
     background-color: #694F91;
+}
+
+.user-button {
+    border-radius: 50%;
 }
