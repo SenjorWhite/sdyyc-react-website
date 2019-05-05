@@ -1,0 +1,40 @@
+.SideBar {
+    margin: 5px;
+    padding: 0px;
+    display: block;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #545893;
+    overflow-x: hidden;
+    transition: 0.3s;
+    -webkit-box-shadow: 7px 18px 75px -29px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 18px 75px -29px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 18px 75px -29px rgba(0, 0, 0, 0.75);
+}
+
+.side-ul {
+    color: white;
+    background-color: #545893;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-li {
+    margin-top: 5px;
+    float: none;
+    text-decoration: none;
+}
+
+.side-button {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: #545893;
+    border: none;
+    cursor: pointer;
+}
