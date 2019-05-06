@@ -43,10 +43,6 @@
     outline-color: #2f1557;
 }
 
-.nav-ul button:hover {
+.nav-ul button:hover, a:hover {
     background-color: #694F91;
-}
-
-.user-button {
-    border-radius: 50%;
 }
