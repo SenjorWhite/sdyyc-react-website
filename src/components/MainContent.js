@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SideBar from './SideBar';
 import Home from './Home';
 import Tutorial from './Tutorial';
 import Events from './Events';
@@ -10,19 +11,19 @@ class MainContent extends Component {
         let currentPage;
         switch (this.props.currentPage) {
             case "Home":
-                currentPage = <Home />;
+                currentPage = <Home ClassName="article" />;
                 break;
             case "Tutorial":
-                currentPage = <Tutorial />;
+                currentPage = <Tutorial ClassName="article" />;
                 break;
             case "Events":
-                currentPage = <Events />;
+                currentPage = <Events ClassName="article" />;
                 break;
             case "JoinUs":
-                currentPage = <JoinUs />;
+                currentPage = <JoinUs ClassName="article" />;
                 break;
             case "Contact":
-                currentPage = <Contact />;
+                currentPage = <Contact ClassName="article" />;
                 break;
             default:
                 currentPage = <div>Current Page not found.</div>;
@@ -32,7 +33,10 @@ class MainContent extends Component {
 
     render() {
         return (
-            this.showCurrentPage()
+            <div className="MainContent">
+                {this.showCurrentPage()}
+                <SideBar />
+            </div>
         );
     }
 }

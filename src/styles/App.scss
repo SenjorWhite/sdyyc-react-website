@@ -1,5 +1,9 @@
-body{
-    margin:0px;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
     background-color: #F4EEFD;
 }
 
@@ -7,5 +11,31 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+}
+
+.MainContent {
+    display: flex;
+    flex: 1;
+}
+
+.Home {
+    width: 100%;
+}
+
+.MainContent > .article {
+    flex: 1;
+    order: 1;
+}
+
+.MainContent > .SideBar {
+    flex: 0 0 20vw;
+    transition: 0.5s;
+    order: 1;
+}
+
+.SideBar {
+    overflow: hidden;
+    background-color: #ffffff;
 }

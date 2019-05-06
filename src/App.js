@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
-import SideBar from './components/SideBar';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import './styles/App.scss';
@@ -22,7 +21,6 @@ class App extends Component {
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         </header>
         <NavBar openSideBar={this.openSideBar} setCurrentPage={this.setCurrentPage} />
-        <SideBar showList={this.state.sideBarEnabled} closeSideBar={this.closeSideBar} />
         <MainContent currentPage={this.state.currentPage} />
         <Footer />
       </div>
