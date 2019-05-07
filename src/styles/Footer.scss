@@ -1,13 +1,13 @@
 .Footer {
     display: flex;
-    padding: 1em;
-    height: 10vh;
-    justify-content: center;
+    height: 7vh;
+    justify-content: flex-end;
     background-color: #0e041d;
 }
 
-.Footer ul{
+.Footer > ul{
     display: flex;
     list-style-type: none;
     color: white;
+    padding-right: 1em;
 }

@@ -3,23 +3,25 @@ import '../styles/SideBar.scss';
 
 class SideBar extends Component {
     getEnableState() {
-        if (this.props.showList) {
-            return { width: "300px" };
+        if (this.props.sideBarEnabled) {
+            return { flex: "0 0 15vw" };
         } else {
-            return { width: 0 };
+            return { flex: "0 0 0vw" };
         }
     }
 
     render() {
         return (
-            <div className="SideBar" >
-                <button onClick={this.props.closeSideBar}>&lt;</button>
-                <ul className="side-ul">
-                    <li className="side-li"><button className="side-button">Option 1</button></li>
-                    <li className="side-li"><button className="side-button">Option 2</button></li>
-                    <li className="side-li"><button className="side-button">Option 3</button></li>
-                    <li className="side-li"><button className="side-button">Option 4</button></li>
-                </ul>
+            <div className="SideBar" style={this.getEnableState()} >
+                <button className="closeButton" onClick={this.props.closeSideBar}>
+                    <i className="material-icons">
+                        clear_all
+                    </i>
+                </button>
+                <button>EDIT PROFILE</button>
+                <button>EDIT EVENTS</button>
+                <span className="gap"></span>
+                <button className="auth">Sign in with Google</button>
             </div >
         );
     }

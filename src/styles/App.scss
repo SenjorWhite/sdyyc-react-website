@@ -1,27 +1,31 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0px;
-    background-color: #F4EEFD;
+    background-color: ivory;
 }
 
 .App {
     height: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+    margin-top: auto;
+}
+
+.App > .NavBar {
+    order: 0;
+}
+
+.App > .MainContent {
+    order: 1;
+}
+
+.App > .Footer {
+    order: 2;
 }
 
 .MainContent {
     display: flex;
     flex: 1;
-}
-
-.Home {
-    width: 100%;
 }
 
 .MainContent > .article {
@@ -30,12 +34,8 @@ body {
 }
 
 .MainContent > .SideBar {
-    flex: 0 0 20vw;
+    flex: 0 0 15vw;
+    overflow: hidden;
     transition: 0.5s;
     order: 1;
-}
-
-.SideBar {
-    overflow: hidden;
-    background-color: #ffffff;
 }

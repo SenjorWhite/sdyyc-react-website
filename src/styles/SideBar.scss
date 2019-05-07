@@ -1,0 +1,52 @@
+.SideBar {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    place-content: space-between;
+    background-color: #545893;
+}
+
+.SideBar > button {
+    width: 100%;
+}
+
+.SideBar button {
+    overflow: hidden;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+    background-color: #545893;
+}
+
+.SideBar button:focus {
+    outline-color: #545893;
+}
+
+.SideBar button:hover {
+    background-color: #7E82B1;
+}
+
+.SideBar .gap {
+    height: 70%;
+}
+
+.SideBar > .auth {
+    align-self: flex-end;
+    text-align: center;
+}
+
+.SideBar .auth {
+    background-color: #4d0f53;
+
+    :hover {
+        background-color: #85478B;
+    }
+}
+
+.SideBar .closeButton {
+    text-align: left;
+}

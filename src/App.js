@@ -18,10 +18,16 @@ class App extends Component {
       <div className="App" >
         <header className="App-header">
           <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"></link>
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         </header>
-        <NavBar openSideBar={this.openSideBar} setCurrentPage={this.setCurrentPage} />
-        <MainContent currentPage={this.state.currentPage} />
+        <NavBar openSideBar={this.switchSideBar} setCurrentPage={this.setCurrentPage} />
+        <MainContent
+          currentPage={this.state.currentPage}
+          sideBarEnabled={this.state.sideBarEnabled}
+          closeSideBar={this.closeSideBar}
+        />
         <Footer />
       </div>
     );
@@ -34,8 +40,8 @@ class App extends Component {
     })
   }
 
-  openSideBar = () => {
-    this.setState({ sideBarEnabled: true });
+  switchSideBar = () => {
+    this.setState({ sideBarEnabled: !this.state.sideBarEnabled });
   }
 
   closeSideBar = () => {

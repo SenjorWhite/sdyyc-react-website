@@ -35,7 +35,10 @@ class MainContent extends Component {
         return (
             <div className="MainContent">
                 {this.showCurrentPage()}
-                <SideBar />
+                <SideBar
+                    sideBarEnabled={this.props.sideBarEnabled}
+                    closeSideBar={this.props.closeSideBar}
+                />
             </div>
         );
     }

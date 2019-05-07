@@ -25,7 +25,7 @@ class NavBar extends Component {
                     </li>
                     <li className="title"><span>Software Developers in YYC</span></li>
                     <li className="right" >
-                        <button className="user-button">
+                        <button className="user-button" onClick={this.props.openSideBar}>
                             <i className="material-icons" >person</i>
                         </button>
                     </li>
