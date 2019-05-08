@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import '../styles/NavBar.scss';
 
 class NavBar extends Component {
-
+    setWithSideBar() {
+        if (this.props.sideBarEnabled) {
+            return { backgroundColor: "#545893" };
+        } else {
+            return {};
+        }
+    }
 
     render() {
         return (
@@ -25,7 +31,7 @@ class NavBar extends Component {
                     </li>
                     <li className="title"><span>Software Developers in YYC</span></li>
                     <li className="right" >
-                        <button className="user-button" onClick={this.props.openSideBar}>
+                        <button className="user-button" style={this.setWithSideBar()} onClick={this.props.openSideBar}>
                             <i className="material-icons" >person</i>
                         </button>
                     </li>

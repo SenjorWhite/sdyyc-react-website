@@ -22,7 +22,11 @@ class App extends Component {
           <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"></link>
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         </header>
-        <NavBar openSideBar={this.switchSideBar} setCurrentPage={this.setCurrentPage} />
+        <NavBar
+          openSideBar={this.switchSideBar}
+          sideBarEnabled={this.state.sideBarEnabled}
+          setCurrentPage={this.setCurrentPage}
+        />
         <MainContent
           currentPage={this.state.currentPage}
           sideBarEnabled={this.state.sideBarEnabled}

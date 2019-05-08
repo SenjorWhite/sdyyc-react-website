@@ -13,8 +13,8 @@ function Home() {
                 <p>Simon</p>
             </div>
             <div className="thoughts">
-                <p style={{ fontStyle: "italic" }}>"That's how things started." A sage said. (lol)</p>
-                <p>As a member of this group, I put this article written by Simon on the home page conventionally.</p>
+                <p style={{ fontStyle: "italic" }}>-- "That's how things started." A sage said. -- (lol)</p>
+                <p>As a member of this group, I conventionally put this article written by Simon on the home page.</p>
                 <p>Thank him for giving me such an excellent opportunity to learn new things and improve myself together. He also found a perfect meetup place for this group.</p>
                 <p>I think we are still welcome anyone who is going to join us and grow together. Come and join us if you have willingness and passion, no more hesitate! </p>
                 <p>Senjor</p>

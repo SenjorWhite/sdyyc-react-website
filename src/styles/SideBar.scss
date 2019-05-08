@@ -1,7 +1,11 @@
 .SideBar {
-    display: flex;
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    width: 15vw;
     overflow: hidden;
-    flex-wrap: wrap;
+    overflow-y: auto;
+    transition: 0.2s;
     place-content: space-between;
     background-color: #545893;
 }
@@ -11,14 +15,13 @@
 }
 
 .SideBar button {
-    overflow: hidden;
     border: none;
     padding: 12px;
     cursor: pointer;
-    align-self: flex-start;
     font-size: 18px;
+    white-space: nowrap;
     color: white;
-    text-align: left;
+    text-align: center;
     background-color: #545893;
 }
 
@@ -28,15 +31,6 @@
 
 .SideBar button:hover {
     background-color: #7E82B1;
-}
-
-.SideBar .gap {
-    height: 70%;
-}
-
-.SideBar > .auth {
-    align-self: flex-end;
-    text-align: center;
 }
 
 .SideBar .auth {
