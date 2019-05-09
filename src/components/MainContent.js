@@ -7,6 +7,13 @@ import JoinUs from './JoinUs';
 import Contact from './Contact';
 
 class MainContent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: null
+        };
+    }
+
     showCurrentPage() {
         let currentPage;
         switch (this.props.currentPage) {

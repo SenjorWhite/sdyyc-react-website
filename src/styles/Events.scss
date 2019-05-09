@@ -1,0 +1,60 @@
+.Events > h1 {
+    text-align: center;
+}
+
+.event-list button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    background-color: #55135c;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: #97649c;
+    }
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column-reverse;
+    list-style-type: none;
+}
+
+.event-card {
+    padding: 1em;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event-card ul {
+    padding: 0;
+    width: 30vw;
+    transition: 0.3s;
+    list-style-type: none;
+    box-shadow: 9px 10px 44px -17px rgba(0, 0, 0, 0.75);
+
+    &:hover {
+        width: 32vw;
+    }
+}
+
+.event-card .event-title, .event-content {
+    width: auto;
+    padding: 5px;
+}
+
+.event-title {
+    color: white;
+    background-color: #080c3b;
+}
+
+.event-content {
+    min-height: 10vh;
+    background-color: #D4D5E0;
+}

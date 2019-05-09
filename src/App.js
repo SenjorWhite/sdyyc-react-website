@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   setCurrentPage = (event) => {
-    console.log(event.target);
     this.setState({
       currentPage: event.target.value
     })
