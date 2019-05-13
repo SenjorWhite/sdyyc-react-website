@@ -6,4 +6,9 @@ module.exports = function (app) {
             "/api/events"
             , { target: "http://localhost:3939" })
     );
+    app.use(
+        proxy(
+            "/api/auth/google"
+            , { target: "http://localhost:3939" })
+    );
 }
