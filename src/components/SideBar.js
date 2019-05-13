@@ -16,6 +16,25 @@ class SideBar extends Component {
         console.log(user);
     }
 
+    renderAuthButton() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return (
+                    <button className="auth" onClick={() => { window.location.href = "/api/auth/google" }}>
+                        Sign in with Google
+                </button>
+                );
+            default:
+                return (
+                    <button className="auth" onClick={() => { window.location.href = "/api/auth/logout" }}>
+                        Sign out
+                    </button>
+                )
+        }
+    }
+
     render() {
         return (
             <div className="SideBar" style={this.getEnableState()} >
@@ -27,8 +46,7 @@ class SideBar extends Component {
                 <button>EDIT PROFILE</button>
                 <button onClick={this.getEvents}>EDIT EVENTS</button>
                 <span className="gap"></span>
-                <button className="auth" onClick={this.login}>Sign in with Google</button>
-                <a className="auth" href="/api/auth/google">Sign in with Google</a>
+                {this.renderAuthButton()}
             </div >
         );
     }

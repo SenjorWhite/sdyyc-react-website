@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
     this.state = {
       currentPage: "Home",
-      sideBarEnabled: false
+      sideBarEnabled: false,
+      auth: null
     }
   }
 
@@ -23,11 +24,13 @@ class App extends Component {
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         </header>
         <NavBar
+          auth={this.state.auth}
           openSideBar={this.switchSideBar}
           sideBarEnabled={this.state.sideBarEnabled}
           setCurrentPage={this.setCurrentPage}
         />
         <MainContent
+          auth={this.state.auth}
           currentPage={this.state.currentPage}
           sideBarEnabled={this.state.sideBarEnabled}
           closeSideBar={this.closeSideBar}
@@ -35,6 +38,16 @@ class App extends Component {
         <Footer />
       </div>
     );
+  }
+
+  async componentDidMount() {
+    let res = await fetch("/api/auth/current_user", { method: "GET" })
+    console.log(res);
+    let userInfo = await res.json();
+    console.log(userInfo);
+    this.setState({
+      auth: userInfo
+    })
   }
 
   setCurrentPage = (event) => {

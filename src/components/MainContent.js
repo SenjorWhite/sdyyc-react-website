@@ -43,6 +43,7 @@ class MainContent extends Component {
             <div className="MainContent">
                 {this.showCurrentPage()}
                 <SideBar
+                    auth={this.props.auth}
                     sideBarEnabled={this.props.sideBarEnabled}
                     closeSideBar={this.props.closeSideBar}
                 />
