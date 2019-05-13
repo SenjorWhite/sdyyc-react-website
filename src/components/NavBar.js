@@ -10,6 +10,20 @@ class NavBar extends Component {
         }
     }
 
+    renderUserIcon() {
+        console.log(this.props.auth);
+        switch (this.props.auth) {
+            case null:
+                return <i className="material-icons" >person</i>;
+            case false:
+                return <i className="material-icons" >person</i>;
+            default:
+                return (
+                    <img src={this.props.auth.picture} alt={this.props.auth.displayName}/>
+                );
+        }
+    }
+
     render() {
         return (
             <div className="NavBar">
@@ -32,7 +46,7 @@ class NavBar extends Component {
                     <li className="title"><span>Software Developers in YYC</span></li>
                     <li className="right" >
                         <button className="user-button" style={this.setWithSideBar()} onClick={this.props.openSideBar}>
-                            <i className="material-icons" >person</i>
+                            {this.renderUserIcon()}
                         </button>
                     </li>
                 </ul>

@@ -41,7 +41,7 @@ class SideBar extends Component {
                 <button className="closeButton" onClick={this.props.closeSideBar}>
                     <i className="material-icons">
                         clear_all
-                        </i>
+                    </i>
                 </button>
                 <button>EDIT PROFILE</button>
                 <button onClick={this.getEvents}>EDIT EVENTS</button>
