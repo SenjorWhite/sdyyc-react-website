@@ -11,7 +11,6 @@ class NavBar extends Component {
     }
 
     renderUserIcon() {
-        console.log(this.props.auth);
         switch (this.props.auth) {
             case null:
                 return <i className="material-icons" >person</i>;
@@ -19,7 +18,35 @@ class NavBar extends Component {
                 return <i className="material-icons" >person</i>;
             default:
                 return (
-                    <img src={this.props.auth.picture} alt={this.props.auth.displayName}/>
+                    <img src={this.props.auth.picture} alt={this.props.auth.displayName} />
+                );
+        }
+    }
+
+    renderUserName() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return;
+            default:
+                return (
+                    <span style={{ padding: "5px 10px" }}>{this.props.auth.displayName}</span>
+                );
+        }
+    }
+
+    renderUserCredits() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return;
+            default:
+                return (
+                    <li className="right">
+                        <span className="credits">Credits: {this.props.auth.credits}</span>
+                    </li>
                 );
         }
     }
@@ -44,8 +71,10 @@ class NavBar extends Component {
                         <button onClick={this.props.setCurrentPage} value="Contact">Contact</button>
                     </li>
                     <li className="title"><span>Software Developers in YYC</span></li>
+                    {this.renderUserCredits()}
                     <li className="right" >
                         <button className="user-button" style={this.setWithSideBar()} onClick={this.props.openSideBar}>
+                            {this.renderUserName()}
                             {this.renderUserIcon()}
                         </button>
                     </li>

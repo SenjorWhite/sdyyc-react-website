@@ -46,6 +46,7 @@ class MainContent extends Component {
                     auth={this.props.auth}
                     sideBarEnabled={this.props.sideBarEnabled}
                     closeSideBar={this.props.closeSideBar}
+                    sendStripeToken={this.props.sendStripeToken}
                 />
             </div>
         );

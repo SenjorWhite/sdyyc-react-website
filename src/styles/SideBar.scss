@@ -14,6 +14,22 @@
     width: 100%;
 }
 
+.SideBar .donate-div {
+    white-space: nowrap;
+}
+
+.SideBar .why {
+    height: 100%;
+    width: 15%;
+    background-color: rgb(97, 130, 172);
+}
+
+.SideBar .donate {
+    width: 85%;
+    height: 100%;
+    background-color: #557BAE;
+}
+
 .SideBar button {
     border: none;
     padding: 12px;
@@ -23,14 +39,14 @@
     color: white;
     text-align: center;
     background-color: #545893;
-}
 
-.SideBar button:focus {
-    outline-color: #545893;
-}
+    &:focus {
+        outline: none;
+    }
 
-.SideBar button:hover {
-    background-color: #7E82B1;
+    &:hover {
+        background-color: #7E82B1;
+    }
 }
 
 .SideBar .auth {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 import '../styles/SideBar.scss';
 
 class SideBar extends Component {
@@ -24,13 +25,43 @@ class SideBar extends Component {
                 return (
                     <button className="auth" onClick={() => { window.location.href = "/api/auth/google" }}>
                         Sign in with Google
-                </button>
+                    </button>
                 );
             default:
                 return (
                     <button className="auth" onClick={() => { window.location.href = "/api/auth/logout" }}>
                         Sign out
                     </button>
+                )
+        }
+    }
+
+    renderDonateButton() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return;
+            default:
+                return (
+                    <div className="donate-div">
+                        <StripeCheckout
+                            name="Donate Senjor The Poor"
+                            description="please give him some money."
+                            amount={10000}
+                            currency="CAD"
+                            locale="en"
+                            stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                            token={token => this.props.sendStripeToken(token)}
+                        >
+                            <button className="donate">
+                                Donate Senjor
+                            </button>
+                        </StripeCheckout>
+                        <button className="why">
+                            ?
+                        </button>
+                    </div>
                 )
         }
     }
@@ -46,6 +77,7 @@ class SideBar extends Component {
                 <button>EDIT PROFILE</button>
                 <button onClick={this.getEvents}>EDIT EVENTS</button>
                 <span className="gap"></span>
+                {this.renderDonateButton()}
                 {this.renderAuthButton()}
             </div >
         );

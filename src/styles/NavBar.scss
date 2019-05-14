@@ -21,8 +21,15 @@
     font-family: 'Pacifico', cursive;
 }
 
+.credits {
+    font-size: 16px;
+    padding: 0px 15px;
+    align-self: center;
+    color: white;
+}
+
 .right {
-    margin-left: auto;
+    margin-left: 0;
 }
 
 .nav-ul li {
@@ -33,8 +40,7 @@
     display: flex;
 }
 
-.user-button img{
-
+.user-button img {
     width: 25px;
 }
 

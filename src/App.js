@@ -33,6 +33,7 @@ class App extends Component {
           auth={this.state.auth}
           currentPage={this.state.currentPage}
           sideBarEnabled={this.state.sideBarEnabled}
+          sendStripeToken={this.sendStripeToken}
           closeSideBar={this.closeSideBar}
         />
         <Footer />
@@ -42,9 +43,21 @@ class App extends Component {
 
   async componentDidMount() {
     let res = await fetch("/api/auth/current_user", { method: "GET" })
-    console.log(res);
     let userInfo = await res.json();
     console.log(userInfo);
+    this.setState({
+      auth: userInfo
+    })
+  }
+
+  sendStripeToken = async (token) => {
+    let res = await fetch("api/stripe", {
+      method: "POST",
+      body: JSON.stringify(token),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    let userInfo = await res.json();
     this.setState({
       auth: userInfo
     })
