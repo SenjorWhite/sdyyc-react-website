@@ -9,8 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: "Home",
-      sideBarEnabled: false,
       auth: null
     }
   }
@@ -36,9 +34,6 @@ class App extends Component {
             <MainContent
               {...props}
               auth={this.state.auth}
-              currentPage={this.state.currentPage}
-              sideBarEnabled={this.state.sideBarEnabled}
-              closeSideBar={this.closeSideBar}
             />}
           />
           <Footer />
@@ -73,14 +68,6 @@ class App extends Component {
     this.setState({
       currentPage: event.target.value
     })
-  }
-
-  switchSideBar = () => {
-    this.setState({ sideBarEnabled: !this.state.sideBarEnabled });
-  }
-
-  closeSideBar = () => {
-    this.setState({ sideBarEnabled: false });
   }
 }
 

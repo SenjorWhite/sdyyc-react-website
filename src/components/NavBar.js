@@ -4,6 +4,13 @@ import SideBar from './SideBar';
 import '../styles/NavBar.scss';
 
 class NavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sideBarEnabled: false
+        }
+    }
+
     setWithSideBar() {
         if (this.props.sideBarEnabled) {
             return { backgroundColor: "#545893" };
@@ -53,6 +60,10 @@ class NavBar extends Component {
         }
     }
 
+    switchSideBar = () => {
+        this.setState({ sideBarEnabled: !this.state.sideBarEnabled });
+    }
+
     render() {
         return (
             <div className="NavBar">
@@ -75,7 +86,7 @@ class NavBar extends Component {
                     <li className="title"><span>Software Developers in YYC</span></li>
                     {this.renderUserCredits()}
                     <li className="right" >
-                        <button className="user-button" style={this.setWithSideBar()} onClick={this.props.openSideBar}>
+                        <button className="user-button" style={this.setWithSideBar()} onClick={this.switchSideBar}>
                             {this.renderUserName()}
                             {this.renderUserIcon()}
                         </button>
@@ -83,8 +94,8 @@ class NavBar extends Component {
                 </ul>
                 <SideBar
                     auth={this.props.auth}
-                    sideBarEnabled={this.props.sideBarEnabled}
-                    closeSideBar={this.props.closeSideBar}
+                    sideBarEnabled={this.state.sideBarEnabled}
+                    closeSideBar={this.switchSideBar}
                     sendStripeToken={this.props.sendStripeToken}
                 />
             </div >

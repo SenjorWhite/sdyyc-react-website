@@ -75,7 +75,7 @@ class Events extends Component {
                 <ul className="event-list">
                     {this.showEvents()}
                 </ul>
-                <button className="create-btn">+</button>
+                
             </div >
         );
     }
