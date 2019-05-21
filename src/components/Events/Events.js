@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Events.scss';
+import '../../styles/Events.scss';
 
 class Events extends Component {
     constructor(props) {
@@ -75,6 +75,7 @@ class Events extends Component {
                 <ul className="event-list">
                     {this.showEvents()}
                 </ul>
+                <button className="create-btn">+</button>
             </div >
         );
     }

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import SideBar from './SideBar';
 import Home from './Home';
 import Tutorial from './Tutorial';
-import Events from './Events';
+import Events from './Events/Events';
 import JoinUs from './JoinUs';
 import Contact from './Contact';
 
@@ -16,24 +15,24 @@ class MainContent extends Component {
 
     showCurrentPage() {
         let currentPage;
-        switch (this.props.currentPage) {
-            case "Home":
+        switch (this.props.match.params.currentPage) {
+            case "home":
                 currentPage = <Home ClassName="article" />;
                 break;
-            case "Tutorial":
+            case "tutorial":
                 currentPage = <Tutorial ClassName="article" />;
                 break;
-            case "Events":
+            case "events":
                 currentPage = <Events ClassName="article" />;
                 break;
-            case "JoinUs":
+            case "joinus":
                 currentPage = <JoinUs ClassName="article" />;
                 break;
-            case "Contact":
+            case "contact":
                 currentPage = <Contact ClassName="article" />;
                 break;
             default:
-                currentPage = <div>Current Page not found.</div>;
+                currentPage = <Home ClassName="article" />;
         }
         return currentPage;
     }
@@ -42,12 +41,7 @@ class MainContent extends Component {
         return (
             <div className="MainContent">
                 {this.showCurrentPage()}
-                <SideBar
-                    auth={this.props.auth}
-                    sideBarEnabled={this.props.sideBarEnabled}
-                    closeSideBar={this.props.closeSideBar}
-                    sendStripeToken={this.props.sendStripeToken}
-                />
+
             </div>
         );
     }

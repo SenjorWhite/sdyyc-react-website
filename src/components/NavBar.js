@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import SideBar from './SideBar';
 import '../styles/NavBar.scss';
 
 class NavBar extends Component {
@@ -56,19 +58,19 @@ class NavBar extends Component {
             <div className="NavBar">
                 <ul className="nav-ul">
                     <li>
-                        <button onClick={this.props.setCurrentPage} value="Home">Home</button>
+                        <Link className="nav-link" to="/home" value="Tutorial">Home</Link>
                     </li>
                     <li>
-                        <button onClick={this.props.setCurrentPage} value="Tutorial">Tutorial</button>
+                        <Link className="nav-link" to="/tutorial" value="Tutorial">Tutorial</Link>
                     </li>
                     <li>
-                        <button onClick={this.props.setCurrentPage} value="Events">Events</button>
+                        <Link className="nav-link" to="/events" value="Tutorial">Events</Link>
                     </li>
                     <li>
-                        <button onClick={this.props.setCurrentPage} value="JoinUs">Join us</button>
+                        <Link className="nav-link" to="/joinus" value="Tutorial">Join Us</Link>
                     </li>
                     <li>
-                        <button onClick={this.props.setCurrentPage} value="Contact">Contact</button>
+                        <Link className="nav-link" to="/contact" value="Tutorial">Contact</Link>
                     </li>
                     <li className="title"><span>Software Developers in YYC</span></li>
                     {this.renderUserCredits()}
@@ -79,6 +81,12 @@ class NavBar extends Component {
                         </button>
                     </li>
                 </ul>
+                <SideBar
+                    auth={this.props.auth}
+                    sideBarEnabled={this.props.sideBarEnabled}
+                    closeSideBar={this.props.closeSideBar}
+                    sendStripeToken={this.props.sendStripeToken}
+                />
             </div >
         );
     }
