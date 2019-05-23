@@ -30,7 +30,7 @@ class App extends Component {
             sendStripeToken={this.sendStripeToken}
             setCurrentPage={this.setCurrentPage}
           />
-          <Route path={["/:currentPage", "/"]} component={(props) =>
+          <Route path={["/:currentPage/:subPage", "/:currentPage", "/"]} component={(props) =>
             <MainContent
               {...props}
               auth={this.state.auth}

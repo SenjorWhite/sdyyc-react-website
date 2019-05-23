@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Events.scss';
 
 class Events extends Component {
@@ -12,7 +13,7 @@ class Events extends Component {
     }
 
     getPivotStyle(index) {
-        console.log("index:" + index + " pivot:" + this.state.pivot);
+        //console.log("index:" + index + " pivot:" + this.state.pivot);
         if (index === parseInt(this.state.pivot)) {
             return { minWidth: "80vw" };
         } else {
@@ -75,7 +76,13 @@ class Events extends Component {
                 <ul className="event-list">
                     {this.showEvents()}
                 </ul>
-                
+                <Link to="/events/create" className="add-button" style={{ boxShadow: "5px 5px 10px 1px rgba(0, 0, 0, 0.75)" }}>
+                    <div className="add-button-content">
+                        <i className="material-icons">
+                            create
+                        </i>
+                    </div>
+                </Link>
             </div >
         );
     }

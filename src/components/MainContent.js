@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './Home';
 import Tutorial from './Tutorial';
 import Events from './Events/Events';
+import CreateEvent from './Events/CreateEvent';
 import JoinUs from './JoinUs';
 import Contact from './Contact';
 
@@ -23,7 +24,10 @@ class MainContent extends Component {
                 currentPage = <Tutorial ClassName="article" />;
                 break;
             case "events":
-                currentPage = <Events ClassName="article" />;
+                if (this.props.match.params.subPage === "create")
+                    currentPage = <CreateEvent ClassName="article" />;
+                else
+                    currentPage = <Events ClassName="article" />;
                 break;
             case "joinus":
                 currentPage = <JoinUs ClassName="article" />;
@@ -40,8 +44,8 @@ class MainContent extends Component {
     render() {
         return (
             <div className="MainContent">
+                {console.log("Current Page: %s, Sub Page: %s", this.props.match.params.currentPage, this.props.match.params.subPage)}
                 {this.showCurrentPage()}
-
             </div>
         );
     }
