@@ -4,6 +4,7 @@
 }
 
 .create-form {
+    border-radius: 8px;
     margin: 50px;
     width: 60vw;
     display: flex;
@@ -12,9 +13,19 @@
 
     input, textarea {
         margin: 5px 5px 15px 5px;
+
+        &:focus {
+            outline-color: #7E82B1;
+            outline-style: double;
+        }
+    }
+
+    input {
+        border-radius: 2px;
     }
 
     textarea {
+        border-radius: 3px;
         height: 40vh;
         resize: vertical;
     }
@@ -22,6 +33,46 @@
     label {
         margin: 2px 5px;
         color: white;
+    }
+
+    .invitees {
+        display: flex;
+
+        .invitee {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 3px 5px;
+            padding: 5px;
+            border-radius: 8px 0;
+            background-image: linear-gradient(-45deg, rgb(110, 116, 177), #545893);
+
+            button {
+                border: none;
+                padding: 0 0;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-self: center;
+                border-radius: 5px;
+
+                &:focus{
+                    outline: none;
+                }
+
+                img {
+                    border-radius: 5px;
+                    transition: 0.3s;
+                    align-self: center;
+                    top: 0;
+                    width: 50px;
+
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
     }
 
     .button-container {
@@ -42,6 +93,10 @@
 
             &:hover {
                 background-color: #545893;
+            }
+
+            &:focus {
+                outline: none;
             }
         }
     }
