@@ -7,7 +7,7 @@ function CreateForm(props) {
         <div className="CreateEvent">
             <div className="create-form">
                 <label htmlFor="eventTitle">Title:</label>
-                <input type="text" id="eventTitle" name="title" placeholder="The event title.." />
+                <input type="text" id="eventTitle" name="title" placeholder="The event title.." onChange={props.handleTitleChange} value={props.title} />
                 <label htmlFor="datePicker">Date:</label>
                 <DatePicker id="datePicker"
                     selected={props.startDate}
@@ -17,23 +17,23 @@ function CreateForm(props) {
                     timeIntervals="10"
                 />
                 <label htmlFor="content">Content:</label>
-                <textarea placeholder="Describe your event.." />
-                <label htmlFor="invitee">Invitee:</label>
+                <textarea id="content" placeholder="Describe your event.." onChange={props.handleContentChange} value={props.content} />
+                <label htmlFor="invitee">Invitee(s):</label>
                 <div className="invitees">
                     {props.renderInvitees()}
                 </div>
                 <div className="button-container">
-                    <button className="back">
+                    <button className="back" onClick={props.handleClickBack}>
                         <i className="material-icons">
                             undo
                         </i>
                         Back
                     </button>
-                    <button className="next">
+                    <button className="next" onClick={props.handleClickNext}>
                         Next
-                    <i className="material-icons">
+                        <i className="material-icons">
                             send
-                    </i>
+                        </i>
                     </button>
                 </div>
             </div>

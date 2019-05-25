@@ -34,6 +34,7 @@ class App extends Component {
             <MainContent
               {...props}
               auth={this.state.auth}
+              setAuth={this.setAuth}
             />}
           />
           <Footer />
@@ -62,6 +63,12 @@ class App extends Component {
     this.setState({
       auth: userInfo
     })
+  }
+
+  setAuth = (auth) => {
+    this.setState({
+      auth: auth
+    });
   }
 
   setCurrentPage = (event) => {

@@ -34,6 +34,7 @@ class Events extends Component {
             <li className="event-card" key={index}>
                 <ul style={this.getPivotStyle(index)}>
                     <li className="event-title">{event.title}</li>
+                    <li className="event-date">{new Date(event.eventDate).toLocaleString()}</li>
                     <li className="event-content">{event.content}</li>
                     <li className="event-rsvp">{this.createRSVPButton(event, index)}</li>
                 </ul>

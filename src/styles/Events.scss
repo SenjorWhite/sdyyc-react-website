@@ -44,7 +44,7 @@
     }
 }
 
-.event-card .event-title, .event-content {
+.event-card .event-title, .event-content, .event-date {
     width: auto;
     padding: 5px;
 }
@@ -54,12 +54,17 @@
     background-color: #080c3b;
 }
 
+.event-date {
+    color: white;
+    background-color: #55135c;
+}
+
 .event-content {
     min-height: 10vh;
     background-color: #D4D5E0;
 }
 
-.add-button{
+.add-button {
     height: 50px;
     width: 50px;
     display: flex;
@@ -74,6 +79,6 @@
     border-radius: 50%;
 }
 
-.add-button-content{
+.add-button-content {
     align-self: center;
 }
