@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
-import '../../styles/CreateEvent.scss';
+import CreateForm from './CreateForm';
 import "react-datepicker/dist/react-datepicker.css";
-import { updateExpression } from '@babel/types';
 
 const Users = [
     {
@@ -26,14 +24,14 @@ export default class CreateEvent extends Component {
         }
     }
 
+    handleSubmit = () => {
+        console.log("Submit");
+    }
+
     handleChange = (date) => {
         this.setState({
             startDate: date
         });
-    }
-
-    handleSubmit = () => {
-        console.log("Submit");
     }
 
     getInvitees = () => {
@@ -89,40 +87,11 @@ export default class CreateEvent extends Component {
 
     render() {
         return (
-            <div className="CreateEvent">
-                <div className="create-form">
-                    <label htmlFor="eventTitle">Title:</label>
-                    <input type="text" id="eventTitle" name="title" placeholder="The event title.." />
-                    <label htmlFor="datePicker">Date:</label>
-                    <DatePicker id="datePicker"
-                        selected={this.state.startDate}
-                        onChange={this.handleChange}
-                        showTimeSelect
-                        dateFormat="Pp"
-                        timeIntervals="10"
-                    />
-                    <label htmlFor="content">Content:</label>
-                    <textarea placeholder="Describe your event.." />
-                    <label htmlFor="invitee">Invitee:</label>
-                    <div className="invitees">
-                        {this.renderInvitees()}
-                    </div>
-                    <div className="button-container">
-                        <button className="back">
-                            <i className="material-icons">
-                                undo
-                            </i>
-                            Back
-                        </button>
-                        <button className="next">
-                            Next
-                        <i className="material-icons">
-                                send
-                        </i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        )
+            <CreateForm
+            startDate={this.state.stateDate}
+            handleChange={this.handleDateChange}
+            renderInvitees={this.renderInvitees}
+        />
+        );
     }
 }
