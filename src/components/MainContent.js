@@ -27,7 +27,7 @@ class MainContent extends Component {
                 if (this.props.match.params.subPage === "create")
                     currentPage = <CreateEvent ClassName="article" setAuth={this.props.setAuth} />;
                 else
-                    currentPage = <Events ClassName="article" />;
+                    currentPage = <Events ClassName="article" auth={this.props.auth}/>;
                 break;
             case "joinus":
                 currentPage = <JoinUs ClassName="article" />;

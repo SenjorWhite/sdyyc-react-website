@@ -70,13 +70,9 @@ class Events extends Component {
         return button;
     }
 
-    render() {
-        return (
-            <div className="Events">
-                <h1>Our Events</h1>
-                <ul className="event-list">
-                    {this.showEvents()}
-                </ul>
+    renderCreateButton = () => {
+        if (this.props.auth) {
+            return (
                 <Link to="/events/create" className="add-button" style={{ boxShadow: "5px 5px 10px 1px rgba(0, 0, 0, 0.75)" }}>
                     <div className="add-button-content">
                         <i className="material-icons">
@@ -84,6 +80,18 @@ class Events extends Component {
                         </i>
                     </div>
                 </Link>
+            )
+        }
+    }
+
+    render() {
+        return (
+            <div className="Events">
+                <h1>Our Events</h1>
+                <ul className="event-list">
+                    {this.showEvents()}
+                </ul>
+                {this.renderCreateButton()}
             </div >
         );
     }
