@@ -168,7 +168,7 @@ export default class CreateEvent extends Component {
         if (this.state.title) {
             return <p>{this.state.title}</p>
         } else {
-            return <p style={{ color: "red" }}>You can't leave title as a blank.</p>
+            return <p style={{ color: "red" }}>You can't just leave the title blank.</p>
         }
     }
 
@@ -176,7 +176,7 @@ export default class CreateEvent extends Component {
         if (this.state.content) {
             return <p className="content">{this.state.content}</p>
         } else {
-            return <p style={{ color: "red" }}>You can't leave content as a blank.</p>
+            return <p style={{ color: "red" }}>You can't just leave the content blank.</p>
         }
     }
 
