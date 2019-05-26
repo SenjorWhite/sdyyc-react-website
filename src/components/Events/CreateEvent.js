@@ -142,13 +142,13 @@ export default class CreateEvent extends Component {
                         </label>
                         <div className="information">
                             <label>Title:</label>
-                            <p>{this.state.title}</p>
+                            {this.checkTitle()}
                             <label>Event Date:</label>
                             <p className="date">
                                 {this.state.startDate.toLocaleString()}
                             </p>
                             <label>Content:</label>
-                            <p className="content">{this.state.content}</p>
+                            {this.checkContent()}
                             <label>Invitee(s):</label>
                             <div className="invitees">
                                 {this.listInvitees()}
@@ -156,11 +156,33 @@ export default class CreateEvent extends Component {
                         </div>
                         <div className="buttons">
                             <button onClick={this.handleClickStay}>Modify</button>
-                            <Link className="confirm" to="/events" onClick={this.sendCreateEventInfo}>Confirm</Link>
+                            {this.renderConfirmButton()}
                         </div>
                     </div>
                 </div>
             );
+        }
+    }
+
+    checkTitle = () => {
+        if (this.state.title) {
+            return <p>{this.state.title}</p>
+        } else {
+            return <p style={{ color: "red" }}>You can't leave title as a blank.</p>
+        }
+    }
+
+    checkContent = () => {
+        if (this.state.content) {
+            return <p className="content">{this.state.content}</p>
+        } else {
+            return <p style={{ color: "red" }}>You can't leave content as a blank.</p>
+        }
+    }
+
+    renderConfirmButton() {
+        if (this.state.title && this.state.content) {
+            return <Link className="confirm" to="/events" onClick={this.sendCreateEventInfo}>Confirm</Link>;
         }
     }
 
