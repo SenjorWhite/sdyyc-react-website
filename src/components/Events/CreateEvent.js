@@ -3,19 +3,6 @@ import { Link } from 'react-router-dom';
 import CreateForm from './CreateForm';
 import "react-datepicker/dist/react-datepicker.css";
 
-const Users = [
-    {
-        "_id": "5cd9c1ec779d877ae81b63a6",
-        "displayName": "Senjor White",
-        "picture": "https://lh5.googleusercontent.com/-Res8JrplBFg/AAAAAAAAAAI/AAAAAAAACFU/ATTokUN3Yck/photo.jpg"
-    },
-    {
-        "_id": "5ce7652f3f2afd550ca65181",
-        "displayName": "White Senjor",
-        "picture": "https://lh6.googleusercontent.com/-Ig4gXW4-b1o/AAAAAAAAAAI/AAAAAAAAAAo/vgVKidemxU0/photo.jpg"
-    }
-]
-
 export default class CreateEvent extends Component {
     constructor(props) {
         super(props);
@@ -34,8 +21,11 @@ export default class CreateEvent extends Component {
         });
     }
 
-    getInvitees = () => {
-        let invitees = Users.map((invitee, index) => {
+    getInvitees = async () => {
+        let res = await fetch("/api/event/members");
+        let users = await res.json();
+
+        let invitees = users.map((invitee, index) => {
             invitee.invite = false;
             invitee.index = index;
             return invitee;
@@ -44,8 +34,8 @@ export default class CreateEvent extends Component {
         return invitees;
     }
 
-    componentDidMount() {
-        let invitees = this.getInvitees();
+    async componentDidMount() {
+        let invitees = await this.getInvitees();
         this.setState({
             invitees: invitees
         })

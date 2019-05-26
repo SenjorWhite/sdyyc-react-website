@@ -10,7 +10,8 @@ module.exports = function (app) {
                 "/api/auth/logout",
                 "/api/auth/current_user",
                 "/api/stripe",
-                "/api/event/create"]
+                "/api/event/create",
+                "/api/event/members"]
             , { target: "http://localhost:3939" }
         )
     );
